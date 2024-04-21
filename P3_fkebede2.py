@@ -33,7 +33,7 @@ class Node():
 
 
 # Decision Tree Class
-class DecisionTreeClassifier():
+class DecisionTreeClassifier:
     def __init__(self, min_samples_split=2, max_depth=2):
         self.root = None
         self.min_samples_split = min_samples_split
@@ -148,7 +148,7 @@ if __name__ == "__main__":
 
     X = data.iloc[:, 1:].values  # Exclude the first column as it's not a feature
     Y = data.iloc[:, 0].values.reshape(-1, 1)  # Target variable is the first column
-    X_train, X_test, Y_train, Y_test = train_test_split(X, Y, test_size=.2, random_state=41)
+    X_train, X_test, Y_train, Y_test = train_test_split(X, Y, test_size=.35, random_state=42)
 
     classifier = DecisionTreeClassifier(min_samples_split=3, max_depth=3)
     classifier.fit(X_train, Y_train)
